@@ -10,17 +10,9 @@ import org.springframework.context.annotation.Primary;
 @Configuration
 public class XssConfiguration {
     @Bean
-    @Primary
-    public ObjectMapper objectMapper() {
-        return new ObjectMapper().registerModule(getXssModule());
-    }
-
-    private Module getXssModule() {
+    private Module xssModule() {
         return new SimpleModule("XSS-Module")
                 .addSerializer(new JsonHtmlXssSerializer())
                 .addDeserializer(String.class, new JsonHtmlXssDeserializer());
     }
-
 }
-
-

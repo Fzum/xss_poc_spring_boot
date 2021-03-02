@@ -1,5 +1,5 @@
 # XSS POC Spring Boot
-To prevent xss attacks, the spring backend never returns html. input = &lt;h1> => output = &amp;lt;h1&amp;gt;
+To prevent XSS attacks, the spring backend never returns HTML.
 If no HTML should be returned at all from Backend, look at Section **Alternative with Jsoup**.
 
 |                |Input								            |Output                         |
